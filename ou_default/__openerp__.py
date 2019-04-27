@@ -40,6 +40,6 @@
     ],
     'docker': [
         {'name': 'odoo', 'usr': 'jobiols', 'img': 'odoo', 'ver': '9.0:ou'},
-        {'name': 'postgres', 'usr': 'postgres', 'ver': '9.5'},
+        {'name': 'postgres', 'usr': 'postgres', 'ver': '11.1-alpine'},
     ]
 }
