@@ -39,7 +39,7 @@
         {'usr': 'jobiols', 'repo': 'cl-ou', 'branch': '9.0'},
     ],
     'docker': [
-        {'name': 'odoo', 'usr': 'jobiols', 'img': 'openupgrade', 'ver': '9.0'},
+        {'name': 'odoo', 'usr': 'jobiols', 'img': 'odoo', 'ver': '9.0:ou'},
         {'name': 'postgres', 'usr': 'postgres', 'ver': '9.5'},
     ]
 }
