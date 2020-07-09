@@ -1,7 +1,6 @@
-# -*- coding: utf-8 -*-
 # -----------------------------------------------------------------------------
 #
-#    Copyright (C) 2016  jeo Software  (http://www.jeosoft.com.ar)
+#    Copyright (C) 2020  jeo Software  (http://www.jeosoft.com.ar)
 #    All Rights Reserved.
 #
 #    This program is free software: you can redistribute it and/or modify
@@ -19,11 +18,11 @@
 #
 # -----------------------------------------------------------------------------
 {
-    'name': 'ou',
-    'version': '9.0ou.0.0.0',
+    'name': 'ou12',
+    'version': '12.0.0.0.0',
     'license': 'AGPL',
     'category': 'Tools',
-    'summary': 'Migration 8 > 9',
+    'summary': 'Migration 11.0 > 12.0',
     'author': 'jeo Software',
     'depends': [],
 
@@ -34,12 +33,25 @@
     'auto_install': False,
     'images': [],
 
+    # Here begins odoo-env manifest configuration
+    # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    # manifest version, if omitted it is backward compatible
+    'env-ver': '2',
+
+    # if Enterprise it installs in a different directory than community
+    'odoo-license': 'CE',
+
+    # port where odoo starts serving pages
     'port': '8069',
-    'repos': [
-        {'usr': 'jobiols', 'repo': 'cl-ou', 'branch': '9.0'},
+
+    # list of url repos to install in the form 'repo-url directory'
+    'git-repos': [
+        'https://github.com/jobiols/cl-ou.git -b 12.0',
     ],
-    'docker': [
-        {'name': 'odoo', 'usr': 'jobiols', 'img': 'odoo-jeo', 'ver': '9.0.ou'},
-        {'name': 'postgres', 'usr': 'postgres', 'ver': '11.1-alpine'},
-    ]
-}
+
+    # list of images to use in the form 'name image-url'
+    'docker-images': [
+        'odoo jobiols/odoo-jeo:12.0.ou',
+        'postgres postgres:10.1-alpine',
+    ]}
