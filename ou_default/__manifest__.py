@@ -1,6 +1,6 @@
 # -----------------------------------------------------------------------------
 #
-#    Copyright (C) 2020  jeo Software  (http://www.jeosoft.com.ar)
+#    Copyright (C) 2021  jeo Software  (http://www.jeosoft.com.ar)
 #    All Rights Reserved.
 #
 #    This program is free software: you can redistribute it and/or modify
@@ -18,11 +18,11 @@
 #
 # -----------------------------------------------------------------------------
 {
-    'name': 'ou12',
-    'version': '12.0.0.0.0',
+    'name': 'ou13',
+    'version': '13.0.1.0.0',
     'license': 'AGPL',
     'category': 'Tools',
-    'summary': 'Migration 11.0 > 12.0',
+    'summary': 'Migration 12.0 > 13.0',
     'author': 'jeo Software',
     'depends': [],
 
@@ -42,16 +42,19 @@
     # if Enterprise it installs in a different directory than community
     'odoo-license': 'CE',
 
+    # Config to write in odoo.conf
+    'config': [],
+
     # port where odoo starts serving pages
     'port': '8069',
 
     # list of url repos to install in the form 'repo-url directory'
     'git-repos': [
-        'https://github.com/jobiols/cl-ou.git -b 12.0',
+        'https://github.com/jobiols/cl-ou.git',
     ],
 
     # list of images to use in the form 'name image-url'
     'docker-images': [
-        'odoo jobiols/odoo-jeo:12.0.ou',
+        'odoo jobiols/odoo-jeo:13.0.ou',
         'postgres postgres:10.1-alpine',
     ]}

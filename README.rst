@@ -8,11 +8,11 @@
    :target: https://www.gnu.org/licenses/agpl
    :alt: License: AGPL-3
 
-=====
-cl-ou
-=====
+========
+cl-ou 13
+========
 
-`odoo-env <https://pypi.org/project/odoo-env/>`_ Client for openupgrade migration 11.0 -> 12.0
+`odoo-env <https://pypi.org/project/odoo-env/>`_ Client for openupgrade migration 12.0 -> 13.0
 
 |company_logo|
 

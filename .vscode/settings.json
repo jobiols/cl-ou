@@ -1,6 +1,8 @@
 {
+    "python.linting.pylintArgs": [
+        "--load-plugins","pylint_odoo","-d","C0114,C8101,E0401,C0115"
+    ],
     "python.linting.pylintEnabled": true,
-    "python.linting.pydocstyleEnabled": false,
     "python.linting.enabled": true,
-    "restructuredtext.confPath": ""
+    "restructuredtext.confPath": "",
 }
