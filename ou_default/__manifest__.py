@@ -20,7 +20,7 @@
 {
     'name': 'ou12',
     'version': '12.0.1.0.0',
-    'license': 'AGPL',
+    'license': 'AGPL-3',
     'category': 'Tools',
     'summary': 'Migration 11.0 > 12.0',
     'author': 'jeo Software',

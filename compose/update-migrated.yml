@@ -1,0 +1,31 @@
+# Docker Compose File for test migration result v12
+# Version 2021-01-31
+# Hace un update all a la base migrada con la imagen y los fuentes correctos
+
+version: '3.7'
+
+services:
+
+  pg-migrate:
+    image: postgres:10.1-alpine
+    container_name: pg-migrate
+    environment:
+      - POSTGRES_USER=odoo
+      - POSTGRES_PASSWORD=odoo
+    volumes:
+      - /odoo_ar/odoo-11.0/test11/postgresql/:/var/lib/postgresql/data
+
+  odoo:
+    image: jobiols/odoo-jeo:12.0
+    container_name: odoo12
+    volumes:
+      - /odoo_ar/odoo-12.0/test12/config:/opt/odoo/etc/
+      - /odoo_ar/odoo-12.0/test12/data_dir:/opt/odoo/data
+      - /odoo_ar/odoo-12.0/test12/log:/var/log/odoo
+      - /odoo_ar/odoo-12.0/test12/sources:/opt/odoo/custom-addons
+    links:
+      - pg-migrate:db
+    command:
+      - --update=all
+      - --database=test11_prod
+      - --stop-after-init

@@ -1,0 +1,34 @@
+# Docker Compose File for Migration v11 --> v12
+# Version 2021-01-31
+
+# postgres apunta a la base de datos v11 que se quiere migrar
+# ou levanta la imagen ou11 destino con los fuentes v12
+# hace update all
+
+version: '3.7'
+
+services:
+
+  pg-migrate:
+    image: postgres:10.1-alpine
+    container_name: pg-migrate
+    environment:
+      - POSTGRES_USER=odoo
+      - POSTGRES_PASSWORD=odoo
+    volumes:
+      - /odoo_ar/odoo-11.0/test11/postgresql/:/var/lib/postgresql/data
+
+  ou:
+    image: jobiols/odoo-jeo:12.0.ou
+    container_name: ou
+    volumes:
+      - /odoo_ar/odoo-12.0/ou12/config:/opt/odoo/etc/
+      - /odoo_ar/odoo-12.0/ou12/data_dir:/opt/odoo/data
+      - /odoo_ar/odoo-12.0/ou12/log:/var/log/odoo
+      - /odoo_ar/odoo-12.0/ou12/sources:/opt/odoo/custom-addons
+    links:
+      - pg-migrate:db
+    command:
+      - --update=all
+      - --database=test11_prod
+      - --stop-after-init
