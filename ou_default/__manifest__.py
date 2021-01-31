@@ -1,6 +1,6 @@
 # -----------------------------------------------------------------------------
 #
-#    Copyright (C) 2020  jeo Software  (http://www.jeosoft.com.ar)
+#    Copyright (C) 2021  jeo Software  (http://www.jeosoft.com.ar)
 #    All Rights Reserved.
 #
 #    This program is free software: you can redistribute it and/or modify
@@ -19,7 +19,7 @@
 # -----------------------------------------------------------------------------
 {
     'name': 'ou12',
-    'version': '12.0.0.0.0',
+    'version': '12.0.1.0.0',
     'license': 'AGPL',
     'category': 'Tools',
     'summary': 'Migration 11.0 > 12.0',
@@ -45,9 +45,12 @@
     # port where odoo starts serving pages
     'port': '8069',
 
+    # Config to write in odoo.conf
+    'config': [],
+
     # list of url repos to install in the form 'repo-url directory'
     'git-repos': [
-        'https://github.com/jobiols/cl-ou.git -b 12.0',
+        'https://github.com/jobiols/cl-ou.git',
     ],
 
     # list of images to use in the form 'name image-url'
