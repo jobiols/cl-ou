@@ -21,3 +21,4 @@ oca-gen-addon-readme \
 # pylint {} --load-plugins=pylint_odoo -d all -e odoolint -d C8101
 # ejecutar pylint en cada repositorio
 #find ./* -type d -exec pylint {} --load-plugins=pylint_odoo -d all -e odoolint -d C8101 \;
+cp ou_default/README.rst ./
